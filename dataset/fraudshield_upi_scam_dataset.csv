@@ -1,0 +1,51 @@
+message,category,label,urgency,financial_request,personal_info_request,suspicious_link,threat_language,reward_promise,source,sender_type
+ALERT: Your PhonePe UPI handle has been suspended due to pending KYC verification. Click http://phonepe-kyc-verify-portal.in to update identity details now.,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,SMS,Company
+"Sir, I accidentally transferred ₹4,500 to your GPay UPI ID instead of my brother. Please send it back to my GPay number 9876543210 immediately!! 😭",UPI Scam,1,Yes,Yes,No,No,No,No,WhatsApp,Individual
+You have received a cashback reward of ₹850 on your recent Google Pay transaction! Click http://gpay-cashback-reward-claim.net to collect direct to your bank.,UPI Scam,1,No,No,No,Yes,No,Yes,SMS,Company
+"Dear Customer, your PayTM UPI pin was entered incorrectly 3 times. Verify your UPI PIN & ATM card CVV at http://paytm-security-reset.org to reactivate.",UPI Scam,1,Yes,No,Yes,Yes,Yes,No,Email,Company
+"Hi, I am interested in buying your OLX sofa listing. I am sending you a UPI payment request link. Enter your UPI PIN on the link to receive ₹12,000 credit.",UPI Scam,1,No,Yes,Yes,Yes,No,No,WhatsApp,Individual
+URGENT: Suspicious activity detected on your BHIM UPI account. Your account will be frozen within 2 hours. Call our helpline at 1800-555-0199 to resolve.,UPI Scam,1,Yes,No,No,No,Yes,No,SMS,Bank
+"Congratulations! You won ₹25,000 in the Diwali UPI Lucky Draw! Claim your money now by clicking http://upi-diwali-reward-payout.com",UPI Scam,1,No,No,No,Yes,No,Yes,WhatsApp,Unknown
+"Dear user, your bank UPI auto-debit of ₹2,499 for Amazon Prime is scheduled today. If you did not request this, cancel now at http://upi-mandate-cancel.info",UPI Scam,1,Yes,Yes,No,Yes,No,No,Email,Bank
+Plz accept this collect request on GPay for ₹5000 to verify your bank account for your work from home job salary credit.,UPI Scam,1,No,Yes,No,No,No,Yes,WhatsApp,Unknown
+"Dear Customer, your SBI UPI service is blocked as per RBI guidelines. Submit your identity details immediately at http://sbi-upi-kyc-update.com",UPI Scam,1,Yes,No,Yes,Yes,Yes,No,SMS,Bank
+"Hey bro, I mistakenly sent ₹1,200 to ur Paytm UPI handle while paying for groceries. Plz transfer it back to 9123456789. I really need it for medical bill 🙏",UPI Scam,1,Yes,Yes,No,No,No,No,WhatsApp,Individual
+"Your ICICI UPI ID has been credited with ₹3,500 cash bonus. Accept payment request and enter PIN to finalize transfer.",UPI Scam,1,No,No,No,No,No,Yes,SMS,Bank
+Hi! I want to purchase your laptop posted on Facebook Marketplace. I will pay total amount in advance via UPI scan QR code. Scan code to receive funds.,UPI Scam,1,No,Yes,No,No,No,No,WhatsApp,Individual
+Warning: Your HDFC UPI registration will expire tonight. Re-link your mobile number and confirm OTP at http://hdfc-upi-linking-portal.net,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,Email,Bank
+"You received a pay request of ₹9,999 from Army Canteen Store. Enter your 6-digit UPI pin to approve receipt of payment for vehicle deposit.",UPI Scam,1,No,Yes,Yes,No,No,No,SMS,Individual
+"GPay Notification: You've received a scratch card worth up to ₹1,000! Tap http://gpay-scratch-card-win.com to redeem directly into your linked bank account.",UPI Scam,1,No,No,No,Yes,No,Yes,SMS,Company
+"Dear customer, your Amazon Pay UPI account requires mandatory KYC update as per government regulations. Click http://amazon-kyc-upi-update.in",UPI Scam,1,No,No,Yes,Yes,No,No,Email,Company
+"ATTENTION: ₹15,800 has been debited from your account via UPI transaction ID 99281. If you didn't approve this, click http://upi-fraud-dispute-resolve.cc immediately.",UPI Scam,1,Yes,Yes,No,Yes,Yes,No,SMS,Bank
+"Hi, this is Rahul from PhonePe Customer Care. We noticed a failed transaction of ₹800 on your account. To process refund, share the 6-digit OTP sent to your phone.",UPI Scam,1,Yes,Yes,Yes,No,No,Yes,SMS,Company
+Get guaranteed 10% cash refund on every UPI transfer using our new payment gateway extension! Download app now: http://fast-upi-pay-cashback.org,UPI Scam,1,No,No,No,Yes,No,Yes,WhatsApp,Unknown
+Urgent Notice: Your BHIM UPI ID is linked to unauthorized transactions. Complete mandatory verification at http://bhim-security-check.com or face legal action.,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,Email,Government
+"Hi ma'am, I am calling from Axis Bank UPI wing. Your UPI limit has been upgraded to 2 Lakhs. Kindly authorize the collect request sent on your PhonePe to activate.",UPI Scam,1,No,Yes,No,No,No,Yes,WhatsApp,Bank
+"Dear Valued Customer, receive ₹500 INSTANT cashback by completing a quick feedback survey for Paytm UPI. Start here: http://paytm-survey-rewards.net",UPI Scam,1,No,No,No,Yes,No,Yes,SMS,Company
+"Urgent refund alert! ₹3,200 pending refund for your cancelled Flipkart order. Click http://upi-instant-refund-claim.com and enter your bank details.",UPI Scam,1,Yes,Yes,Yes,Yes,No,Yes,SMS,Company
+"Hey mate, sent u ₹2000 by mistake on Google Pay instead of my roommate. Plz re-send to 9811223344. God bless u!",UPI Scam,1,No,Yes,No,No,No,No,SMS,Individual
+"Dear User, your UPI Autopay mandate for Electricity Bill ₹4,120 has failed. Pay immediately to prevent power cut tonight: http://quick-upi-utility-pay.com",UPI Scam,1,Yes,Yes,No,Yes,Yes,No,SMS,Company
+SECURITY ALERT: Someone logged into your PhonePe account from a new device in Kolkata. Lock your UPI account now: http://phonepe-device-lock.com,UPI Scam,1,Yes,No,No,Yes,Yes,No,Email,Company
+Earn ₹500 per day by sending simple UPI test payments for our merchant network! Message us on WhatsApp to join our testing team.,UPI Scam,1,No,Yes,No,No,No,Yes,WhatsApp,Unknown
+Your Kotak Bank UPI access will be blocked within 24 hours due to non-compliance of security guidelines. Verify your identity at http://kotak-upi-verify.com,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,SMS,Bank
+"Hi, I am buying your online product. I sent a payment approval request of ₹3,000 on your GPay. Please enter your UPI PIN to approve the credit.",UPI Scam,1,No,Yes,Yes,No,No,No,WhatsApp,Individual
+"Dear customer, your UPI transaction of ₹12,000 is stuck in pending state. To complete the transfer or request refund, visit http://upi-pending-transaction-fix.org",UPI Scam,1,Yes,Yes,No,Yes,No,No,SMS,Bank
+URGENT: Your UPI ID has been temporarily suspended due to multiple failed pin attempts. Click http://reset-upi-pin-online.com to reset your security PIN now.,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,SMS,Bank
+"Congratulations! You won ₹10,000 in CRED UPI Jackpot. Open app link http://cred-jackpot-winner-claim.net to transfer funds directly to your bank account.",UPI Scam,1,No,No,No,Yes,No,Yes,WhatsApp,Company
+"Heloo sir, I am army clerk Officer Sharma. I want to pay advance room rent ₹15,000 via UPI QR code. Scan QR code and enter PIN to accept army transfer.",UPI Scam,1,No,Yes,Yes,No,No,No,WhatsApp,Individual
+"Dear User, your electricity bill payment of ₹1,850 via PhonePe failed but money was debited. Click http://power-bill-refund-upi.com to initiate instant reverse transfer.",UPI Scam,1,Yes,Yes,No,Yes,No,Yes,Email,Company
+Notice: RBI has updated national UPI security protocol. Mandatory re-registration required for all account holders at http://rbi-upi-portal-compliance.gov.in.pay-sec.cc,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,Email,Government
+"Hi, I am interested in renting your flat. I am sending you a ₹10,000 UPI barcode. Just scan it with your camera and type your PIN to get deposit in bank.",UPI Scam,1,No,Yes,Yes,No,No,No,WhatsApp,Individual
+"Urgent: ₹8,999 debited from your account towards Merchant Pay. If this was not done by you, block your UPI account immediately at http://block-upi-transfers.com",UPI Scam,1,Yes,Yes,No,Yes,Yes,No,SMS,Bank
+"Dear Customer, you have unredeemed PhonePe reward points worth ₹1,450. Convert points to cash before midnight: http://phonepe-points-redeem-cash.com",UPI Scam,1,Yes,No,No,Yes,No,Yes,SMS,Company
+"Alert: Unclaimed UPI refund of ₹2,100 waiting in your queue. Click http://claim-pending-upi-refund.net to submit bank account and IFSC code.",UPI Scam,1,No,Yes,Yes,Yes,No,Yes,Email,Unknown
+"Plz send back ₹3000 i sent to u by mistake on Paytm, my mother is in hospital i really need this money right now sir please help 🙏🙏",UPI Scam,1,Yes,Yes,No,No,No,No,WhatsApp,Individual
+"Dear User, your Google Pay rewards account will expire today. Claim your ₹750 merchant voucher immediately at http://gpay-rewards-vouchers.com",UPI Scam,1,Yes,No,No,Yes,No,Yes,SMS,Company
+URGENT BHIM UPI ALERT: Account frozen due to mismatch in profile data. Verify your bank account credentials now at http://bhim-profile-sync.com,UPI Scam,1,Yes,No,Yes,Yes,Yes,No,Email,Government
+"Hi! You have been selected for ₹5,000 cashback on your first 3 UPI transactions of the month! Claim reward now: http://upi-cashback-offer-today.com",UPI Scam,1,No,No,No,Yes,No,Yes,WhatsApp,Unknown
+"Dear Customer, your UPI VPA handle is suspended. To reactivate your UPI service and prevent permanent blockage, update profile at http://reactivate-vpa-upi.com",UPI Scam,1,Yes,No,Yes,Yes,Yes,No,SMS,Bank
+"Sir I am calling from Paytm customer support. Your UPI refund for ₹1,500 was rejected by bank. Share your debit card number and OTP to receive direct credit.",UPI Scam,1,Yes,Yes,Yes,No,No,Yes,SMS,Company
+Warning! Your daily UPI transaction limit has been exceeded due to suspicious activity. Reset your limit immediately at http://upi-limit-reset-portal.com,UPI Scam,1,Yes,No,No,Yes,Yes,No,Email,Bank
+"Congratulations! You won ₹50,000 in Kaun Banega Crorepati UPI Lucky Draw. Contact KBC executive on WhatsApp 9900112233 to claim cash prize!",UPI Scam,1,No,No,No,No,No,Yes,WhatsApp,Unknown
+"Dear user, your recent UPI transfer of ₹450 to Swiggy was charged twice. Click http://swiggy-double-charge-refund.com to initiate instant reverse transfer.",UPI Scam,1,No,Yes,No,Yes,No,Yes,Email,Company
+"Hey, I accidentally initiated a UPI collect request of ₹1,000 instead of sending it to you. Please decline it or just approve it and I will send u ₹2,000 back!",UPI Scam,1,No,Yes,No,No,No,Yes,WhatsApp,Individual

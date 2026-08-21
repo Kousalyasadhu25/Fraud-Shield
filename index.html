@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FraudShield | AI Scam Analyzer</title>
+
+  <link rel="stylesheet" href="style1.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-shield-halved"></i>
+      FraudShield
+    </div>
+
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Scams</a></li>
+      <li><a href="#">Voice Assistant</a></li>
+      <li><a href="#" class="active">AI Analyzer</a></li>
+      <li><a href="#">Emergency</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h1>AI Scam Analyzer</h1>
+    <p>
+      Upload suspicious messages, screenshots, emails, PDFs or documents.
+      FraudShield AI analyzes them and detects possible scams.
+    </p>
+  </section>
+
+  <!-- ================= MAIN ================= -->
+  <section class="container">
+    <div class="glass-card">
+
+      <!-- TEXT INPUT -->
+      <div class="left-panel">
+        <h2>Paste Scam Message</h2>
+        <textarea id="textInput" placeholder="Paste SMS, WhatsApp message, Email, or suspicious content here..."></textarea>
+      </div>
+
+      <!-- FILE UPLOAD -->
+      <div class="upload-panel">
+        <h2>Upload a File</h2>
+
+        <div class="upload-grid">
+          <div class="upload-card">
+            <i class="fa-solid fa-image"></i>
+            <p>Screenshot</p>
+          </div>
+          <div class="upload-card">
+            <i class="fa-solid fa-file-pdf"></i>
+            <p>PDF</p>
+          </div>
+          <div class="upload-card">
+            <i class="fa-solid fa-file-word"></i>
+            <p>DOCX</p>
+          </div>
+          <div class="upload-card">
+            <i class="fa-solid fa-envelope"></i>
+            <p>Email</p>
+          </div>
+        </div>
+
+        <div class="drop-zone">
+          <input type="file" id="fileInput" accept=".png, .jpg, .jpeg, .webp, .pdf, .docx, .txt, .eml" hidden>
+
+          <label for="fileInput">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h3>Drag & Drop</h3>
+            <p>or Click to Upload</p>
+            <span id="selectedFile">No File Selected</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- BUTTON GROUP -->
+      <div class="button-group">
+        <button id="analyzeBtn" type="button">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          Analyze with FraudShield AI
+        </button>
+        <button id="resetBtn" type="button" class="reset-btn">
+          <i class="fa-solid fa-rotate-left"></i>
+          Clear / Reset
+        </button>
+      </div>
+
+      <!-- RESULT BOX -->
+      <div id="resultBox" class="result-box"></div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 FraudShield AI<br>
+      Stay Alert • Stay Safe • Stay Secure
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

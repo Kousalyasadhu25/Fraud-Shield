@@ -1,0 +1,3489 @@
+/* ==========================================
+   FRAUDSHIELD AI SCAM ANALYZER
+   Premium Cyber Security UI
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0F172A;
+    --card:#1E293B;
+    --card2:#243247;
+
+    --primary:#2563EB;
+    --secondary:#0EA5E9;
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --text:#F8FAFC;
+    --text2:#CBD5E1;
+
+    --border:rgba(255,255,255,.08);
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#020617,#0F172A,#172554);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#3B82F6;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(15,23,42,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.logo i{
+
+    color:#38BDF8;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.navbar a{
+
+    color:#CBD5E1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.navbar a:hover{
+
+    color:#38BDF8;
+
+}
+
+.active{
+
+    color:#38BDF8 !important;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px 50px;
+
+}
+
+.hero h1{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(90deg,#38BDF8,#2563EB,#0EA5E9);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+
+/* ================= MAIN ================= */
+
+.container{
+
+    width:90%;
+
+    margin:auto;
+
+    padding-bottom:60px;
+
+}
+
+.glass-card{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    padding:40px;
+
+    background:rgba(30,41,59,.55);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+}
+
+
+/* Left Panel */
+
+.left-panel h2{
+
+    margin-bottom:20px;
+
+}
+
+.left-panel h3{
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Text Area */
+
+textarea{
+
+    width:100%;
+
+    min-height:220px;
+
+    resize:none;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    font-size:16px;
+
+    color:white;
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#38BDF8;
+
+    box-shadow:
+
+    0 0 18px rgba(56,189,248,.35);
+
+}
+
+
+/* Right Panel */
+
+.right-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.right-panel h2{
+
+    margin-bottom:20px;
+
+}
+
+
+/* Section Animation */
+
+.hero,
+.glass-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* Upload controls are defined once in the main analyzer block below. */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   LOADING SECTION
+========================================== */
+
+.hidden{
+    display:none;
+}
+
+.loading{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.loader{
+    width:70px;
+    height:70px;
+    border:6px solid rgba(255,255,255,.15);
+    border-top:6px solid #38BDF8;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-bottom:25px;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.loading h3{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.loading p{
+    color:var(--text2);
+    margin:8px 0;
+}
+
+
+/* ==========================================
+   RESULT CARD
+========================================== */
+
+.result{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    animation:fadeResult .5s ease;
+}
+
+@keyframes fadeResult{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.result hr{
+
+    border:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin:25px 0;
+
+}
+
+.result h1{
+
+    font-size:65px;
+    margin:15px 0;
+    color:#38BDF8;
+
+}
+
+.result h3{
+
+    margin-bottom:12px;
+
+}
+
+.result p{
+
+    color:var(--text2);
+    line-height:1.7;
+
+}
+
+.result ul{
+
+    padding-left:20px;
+
+}
+
+.result li{
+
+    margin:10px 0;
+    color:var(--text2);
+
+}
+
+
+/* ==========================================
+   RISK BADGES
+========================================== */
+
+.risk-box{
+
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:50px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:white;
+
+}
+
+.high{
+
+    background:var(--danger);
+
+}
+
+.medium{
+
+    background:var(--warning);
+
+}
+
+.low{
+
+    background:var(--success);
+
+}
+
+
+/* ==========================================
+   EVIDENCE CARD
+========================================== */
+
+.evidence-card{
+
+    margin-top:40px;
+
+    background:rgba(30,41,59,.55);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.evidence-card h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.evidence-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.evidence-grid div{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:25px;
+
+    transition:.3s;
+
+}
+
+.evidence-grid div:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38BDF8;
+
+    box-shadow:0 0 20px rgba(56,189,248,.25);
+
+}
+
+.evidence-grid i{
+
+    font-size:32px;
+
+    color:#38BDF8;
+
+    margin-bottom:15px;
+
+}
+
+.evidence-grid h3{
+
+    margin-bottom:10px;
+
+}
+
+.evidence-grid p{
+
+    color:var(--text2);
+
+    word-break:break-word;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    margin-top:50px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:var(--text2);
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+    .glass-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .evidence-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+        gap:20px;
+
+    }
+
+    .navbar ul{
+
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+
+    }
+
+    .evidence-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .glass-card{
+
+        padding:25px;
+
+    }
+
+    .result h1{
+
+        font-size:48px;
+
+    }
+
+}/* ==========================================
+   FRAUDSHIELD AI
+   PROFESSIONAL CYBERSECURITY DASHBOARD UI
+========================================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+:root{
+
+    --bg:#060B16;
+
+    --card:#111827;
+
+    --card-light:#172033;
+
+    --primary:#2563EB;
+
+    --secondary:#38BDF8;
+
+    --success:#22C55E;
+
+    --warning:#F59E0B;
+
+    --danger:#EF4444;
+
+
+    --text:#F8FAFC;
+
+    --muted:#94A3B8;
+
+
+    --border:rgba(148,163,184,.18);
+
+}
+
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(
+    circle at top,
+    #172554,
+    transparent 40%
+    ),
+    var(--bg);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+
+/* =====================
+SCROLLBAR
+===================== */
+
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* =====================
+NAVBAR
+===================== */
+
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+
+    background:rgba(6,11,22,.85);
+
+    backdrop-filter:blur(15px);
+
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+.logo{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+
+
+.logo i{
+
+    color:var(--secondary);
+
+}
+
+
+
+.navbar ul{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+
+}
+
+
+
+.navbar a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-weight:500;
+
+}
+
+
+
+.navbar a:hover,
+.active{
+
+    color:var(--secondary)!important;
+
+}
+
+
+
+
+
+
+/* =====================
+HERO
+===================== */
+
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px 50px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+
+    background:
+    linear-gradient(
+    90deg,
+    #38BDF8,
+    #2563EB
+    );
+
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+/* =====================
+MAIN CONTAINER
+===================== */
+
+
+.container{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding-bottom:60px;
+
+}
+
+
+
+
+
+/* =====================
+MAIN ANALYZER
+===================== */
+
+
+.glass-card{
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1.1fr .9fr;
+
+
+
+    gap:50px;
+
+
+    padding:45px;
+
+
+    background:#0F172A;
+
+
+    border-radius:24px;
+
+
+    border:1px solid var(--border);
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.35);
+
+
+
+    animation:slide .5s ease;
+
+}
+
+
+
+
+
+@keyframes slide{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+}
+
+
+
+
+
+/* =====================
+TEXT AREA
+===================== */
+
+
+textarea{
+
+
+width:100%;
+
+
+height:230px;
+
+
+resize:none;
+
+
+padding:20px;
+
+
+border-radius:16px;
+
+
+background:#070D19;
+
+
+border:1px solid var(--border);
+
+
+color:white;
+
+
+font-size:16px;
+
+
+outline:none;
+
+
+}
+
+
+
+textarea:focus{
+
+
+border-color:var(--secondary);
+
+
+}
+
+
+
+
+
+/* =====================
+UPLOAD AREA
+===================== */
+
+.upload-panel{
+display:flex;
+flex-direction:column;
+gap:18px;
+min-width:0;
+}
+
+.upload-panel h2{
+margin-bottom:0;
+}
+
+.upload-grid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:12px;
+}
+
+.upload-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:96px;
+padding:16px 10px;
+text-align:center;
+cursor:pointer;
+border:1px solid rgba(148,163,184,.18);
+border-radius:16px;
+background:linear-gradient(145deg,rgba(30,41,59,.6),rgba(15,23,42,.34));
+box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+backdrop-filter:blur(16px);
+transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+
+.upload-card i{
+font-size:28px;
+color:#38BDF8;
+margin-bottom:10px;
+filter:drop-shadow(0 0 12px rgba(56,189,248,.25));
+}
+
+.upload-card p{
+color:var(--text2);
+font-size:14px;
+font-weight:500;
+line-height:1.2;
+}
+
+.upload-card:hover{
+transform:translateY(-3px);
+border-color:rgba(56,189,248,.75);
+background:linear-gradient(145deg,rgba(37,99,235,.22),rgba(14,165,233,.1));
+box-shadow:0 14px 32px rgba(2,6,23,.35),0 0 22px rgba(14,165,233,.18);
+}
+
+.drop-zone{
+position:relative;
+overflow:hidden;
+text-align:center;
+border:1px dashed rgba(56,189,248,.46);
+border-radius:18px;
+background:linear-gradient(145deg,rgba(15,23,42,.72),rgba(30,41,59,.36));
+box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 45px rgba(2,6,23,.28);
+backdrop-filter:blur(18px);
+transition:border-color .25s ease,background .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+
+.drop-zone:hover{
+transform:translateY(-2px);
+border-color:#38BDF8;
+background:linear-gradient(145deg,rgba(23,37,84,.74),rgba(15,23,42,.56));
+box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 45px rgba(14,165,233,.16);
+}
+
+.drop-zone label{
+display:flex;
+min-height:218px;
+padding:28px;
+cursor:pointer;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+
+.drop-zone i{
+font-size:46px;
+color:#38BDF8;
+margin-bottom:12px;
+filter:drop-shadow(0 0 18px rgba(56,189,248,.3));
+}
+
+.drop-zone h3{
+margin:0 0 6px;
+font-size:22px;
+}
+
+.drop-zone p{
+margin:0;
+color:var(--text2);
+}
+
+#selectedFile{
+display:inline-block;
+max-width:100%;
+margin-top:16px;
+padding:8px 14px;
+overflow-wrap:anywhere;
+border:1px solid rgba(148,163,184,.16);
+border-radius:999px;
+background:rgba(15,23,42,.72);
+color:#CBD5E1;
+font-size:13px;
+}
+
+#analyzeBtn{
+grid-column:1 / -1;
+width:100%;
+padding:16px 20px;
+border:none;
+border-radius:14px;
+background:linear-gradient(90deg,#2563EB,#0EA5E9);
+color:white;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 16px 34px rgba(37,99,235,.28);
+transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+
+#analyzeBtn i{
+margin-right:10px;
+}
+
+#analyzeBtn:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 38px rgba(14,165,233,.34);
+filter:saturate(1.08);
+}
+
+#analyzeBtn:active{
+transform:translateY(0) scale(.99);
+}
+
+
+
+
+
+/* =====================
+LOADING
+===================== */
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+.loading{
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+align-items:center;
+
+
+padding:40px;
+
+
+}
+
+
+
+.loader{
+
+
+width:65px;
+
+
+height:65px;
+
+
+border-radius:50%;
+
+
+border:6px solid #334155;
+
+
+border-top-color:#38BDF8;
+
+
+animation:spin 1s linear infinite;
+
+
+}
+
+
+
+@keyframes spin{
+
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+
+
+/* =====================
+RESULT
+===================== */
+
+
+.result{
+
+
+background:#0B1220;
+
+
+border:1px solid var(--border);
+
+
+border-radius:18px;
+
+
+padding:35px;
+
+
+}
+
+
+
+.result h1{
+
+
+font-size:60px;
+
+
+color:var(--secondary);
+
+
+}
+
+
+
+.result p,
+.result li{
+
+
+color:var(--muted);
+
+
+line-height:1.8;
+
+
+}
+
+
+
+.result li{
+
+
+margin:10px;
+
+}
+
+
+
+
+
+
+/* =====================
+RISK BADGE
+===================== */
+
+
+.risk-box{
+
+
+padding:10px 22px;
+
+
+border-radius:30px;
+
+
+display:inline-block;
+
+
+font-weight:700;
+
+
+}
+
+
+
+.high{
+
+background:var(--danger);
+
+}
+
+
+.medium{
+
+background:var(--warning);
+
+}
+
+
+.low{
+
+background:var(--success);
+
+}
+
+
+
+
+
+/* =====================
+EVIDENCE SECTION
+===================== */
+
+
+.evidence-card{
+
+
+margin-top:45px;
+
+
+background:#0F172A;
+
+
+border:1px solid var(--border);
+
+
+border-radius:24px;
+
+
+padding:35px;
+
+
+}
+
+
+
+.evidence-card h2{
+
+
+text-align:center;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+.evidence-grid{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(4,1fr);
+
+
+gap:30px;
+
+
+}
+
+
+
+.evidence-grid div{
+
+
+background:var(--card);
+
+
+border-radius:14px;
+
+
+padding:25px;
+
+
+text-align:center;
+
+
+border:1px solid var(--border);
+
+
+}
+
+
+
+.evidence-grid i{
+
+
+font-size:30px;
+
+
+color:var(--secondary);
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+
+
+/* =====================
+FOOTER
+===================== */
+
+
+footer{
+
+
+text-align:center;
+
+
+padding:35px;
+
+
+margin-top:50px;
+
+
+border-top:1px solid var(--border);
+
+
+color:var(--muted);
+
+
+}
+
+
+
+
+
+/* =====================
+RESPONSIVE
+===================== */
+
+
+@media(max-width:1100px){
+
+
+.glass-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+.upload-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.evidence-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+.upload-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.evidence-grid{
+grid-template-columns:1fr;
+}
+
+
+.glass-card{
+    align-items:start;
+}
+
+.left-panel{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+}
+
+#selectedFile{
+    display:block;
+    width:100%;
+    margin-top:15px;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
+
+.drop-zone{
+    overflow:hidden;
+}
+
+.drop-zone label{
+    min-height:190px;
+    padding:24px 18px;
+}
+
+#analyzeBtn{
+    font-size:16px;
+    padding:15px;
+}
+
+}
+
+@media(max-width:420px){
+
+.upload-grid{
+    grid-template-columns:1fr;
+}
+
+.upload-card{
+    min-height:82px;
+}
+
+}
+/* =====================
+   FRAUDSHIELD OUTPUT BOX
+===================== */
+
+.result-box{
+
+    margin-top:40px;
+
+    display:none;
+
+    animation:fadeResult .5s ease;
+
+}
+
+
+.result-box h2{
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    color:var(--secondary);
+
+}
+
+
+.result-box .prediction{
+
+    font-size:45px;
+
+    font-weight:700;
+
+    margin:15px 0;
+
+}
+
+
+.scam-result{
+
+    border-left:6px solid var(--danger);
+
+}
+
+
+.safe-result{
+
+    border-left:6px solid var(--success);
+
+}
+
+
+.result-item{
+
+    margin:15px 0;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+
+.result-item strong{
+
+    color:white;
+
+}
+
+
+.reason-list{
+
+    margin-top:15px;
+
+    padding-left:25px;
+
+}
+
+
+.reason-list li{
+
+    margin:10px 0;
+
+    color:var(--muted);
+
+}
+
+
+.recommendation{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#111827;
+
+    border:1px solid var(--border);
+
+    color:#CBD5E1;
+
+}/* ==========================================
+   FRAUDSHIELD AI SCAM ANALYZER
+   Premium Cyber Security UI
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#0F172A;
+    --card:#1E293B;
+    --card2:#243247;
+
+    --primary:#2563EB;
+    --secondary:#0EA5E9;
+
+    --success:#22C55E;
+    --warning:#F59E0B;
+    --danger:#EF4444;
+
+    --text:#F8FAFC;
+    --text2:#CBD5E1;
+
+    --border:rgba(255,255,255,.08);
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:linear-gradient(135deg,#020617,#0F172A,#172554);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#111827;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#3B82F6;
+
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:1000;
+
+    backdrop-filter:blur(20px);
+
+    background:rgba(15,23,42,.75);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:26px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+.logo i{
+
+    color:#38BDF8;
+
+}
+
+.navbar ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:35px;
+
+}
+
+.navbar a{
+
+    color:#CBD5E1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.navbar a:hover{
+
+    color:#38BDF8;
+
+}
+
+.active{
+
+    color:#38BDF8 !important;
+
+}
+
+
+/* ================= HERO ================= */
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px 50px;
+
+}
+
+.hero h1{
+
+    font-size:50px;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(90deg,#38BDF8,#2563EB,#0EA5E9);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:#CBD5E1;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+}
+
+
+/* ================= MAIN ================= */
+
+.container{
+
+    width:90%;
+
+    margin:auto;
+
+    padding-bottom:60px;
+
+}
+
+.glass-card{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:40px;
+
+    padding:40px;
+
+    background:rgba(30,41,59,.55);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:25px;
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+}
+
+
+/* Left Panel */
+
+.left-panel h2{
+
+    margin-bottom:20px;
+
+}
+
+.left-panel h3{
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+/* Text Area */
+
+textarea{
+
+    width:100%;
+
+    min-height:220px;
+
+    resize:none;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    font-size:16px;
+
+    color:white;
+
+    background:#0F172A;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+textarea:focus{
+
+    border-color:#38BDF8;
+
+    box-shadow:
+
+    0 0 18px rgba(56,189,248,.35);
+
+}
+
+
+/* Right Panel */
+
+.right-panel{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.right-panel h2{
+
+    margin-bottom:20px;
+
+}
+
+
+/* Section Animation */
+
+.hero,
+.glass-card{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(35px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* Upload controls are defined once in the main analyzer block below. */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+/* ==========================================
+   LOADING SECTION
+========================================== */
+
+.hidden{
+    display:none;
+}
+
+.loading{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.loader{
+    width:70px;
+    height:70px;
+    border:6px solid rgba(255,255,255,.15);
+    border-top:6px solid #38BDF8;
+    border-radius:50%;
+    animation:spin 1s linear infinite;
+    margin-bottom:25px;
+}
+
+@keyframes spin{
+    100%{
+        transform:rotate(360deg);
+    }
+}
+
+.loading h3{
+    margin-bottom:20px;
+    font-size:24px;
+}
+
+.loading p{
+    color:var(--text2);
+    margin:8px 0;
+}
+
+
+/* ==========================================
+   RESULT CARD
+========================================== */
+
+.result{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    animation:fadeResult .5s ease;
+}
+
+@keyframes fadeResult{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.result hr{
+
+    border:none;
+    border-top:1px solid rgba(255,255,255,.08);
+    margin:25px 0;
+
+}
+
+.result h1{
+
+    font-size:65px;
+    margin:15px 0;
+    color:#38BDF8;
+
+}
+
+.result h3{
+
+    margin-bottom:12px;
+
+}
+
+.result p{
+
+    color:var(--text2);
+    line-height:1.7;
+
+}
+
+.result ul{
+
+    padding-left:20px;
+
+}
+
+.result li{
+
+    margin:10px 0;
+    color:var(--text2);
+
+}
+
+
+/* ==========================================
+   RISK BADGES
+========================================== */
+
+.risk-box{
+
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:50px;
+    font-weight:700;
+    margin-bottom:20px;
+    color:white;
+
+}
+
+.high{
+
+    background:var(--danger);
+
+}
+
+.medium{
+
+    background:var(--warning);
+
+}
+
+.low{
+
+    background:var(--success);
+
+}
+
+
+/* ==========================================
+   EVIDENCE CARD
+========================================== */
+
+.evidence-card{
+
+    margin-top:40px;
+
+    background:rgba(30,41,59,.55);
+
+    border:1px solid var(--border);
+
+    border-radius:25px;
+
+    padding:35px;
+
+    backdrop-filter:blur(15px);
+
+}
+
+.evidence-card h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.evidence-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:25px;
+
+}
+
+.evidence-grid div{
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:25px;
+
+    transition:.3s;
+
+}
+
+.evidence-grid div:hover{
+
+    transform:translateY(-6px);
+
+    border-color:#38BDF8;
+
+    box-shadow:0 0 20px rgba(56,189,248,.25);
+
+}
+
+.evidence-grid i{
+
+    font-size:32px;
+
+    color:#38BDF8;
+
+    margin-bottom:15px;
+
+}
+
+.evidence-grid h3{
+
+    margin-bottom:10px;
+
+}
+
+.evidence-grid p{
+
+    color:var(--text2);
+
+    word-break:break-word;
+
+}
+
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    margin-top:50px;
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+    color:var(--text2);
+
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media(max-width:1100px){
+
+    .glass-card{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .evidence-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+
+        font-size:38px;
+
+    }
+
+    .navbar{
+
+        flex-direction:column;
+        gap:20px;
+
+    }
+
+    .navbar ul{
+
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:18px;
+
+    }
+
+    .evidence-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .glass-card{
+
+        padding:25px;
+
+    }
+
+    .result h1{
+
+        font-size:48px;
+
+    }
+
+}/* ==========================================
+   FRAUDSHIELD AI
+   PROFESSIONAL CYBERSECURITY DASHBOARD UI
+========================================== */
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+:root{
+
+    --bg:#060B16;
+
+    --card:#111827;
+
+    --card-light:#172033;
+
+    --primary:#2563EB;
+
+    --secondary:#38BDF8;
+
+    --success:#22C55E;
+
+    --warning:#F59E0B;
+
+    --danger:#EF4444;
+
+
+    --text:#F8FAFC;
+
+    --muted:#94A3B8;
+
+
+    --border:rgba(148,163,184,.18);
+
+}
+
+
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(
+    circle at top,
+    #172554,
+    transparent 40%
+    ),
+    var(--bg);
+
+    color:var(--text);
+
+    min-height:100vh;
+
+}
+
+
+
+/* =====================
+SCROLLBAR
+===================== */
+
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563EB;
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* =====================
+NAVBAR
+===================== */
+
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 8%;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:10;
+
+
+    background:rgba(6,11,22,.85);
+
+    backdrop-filter:blur(15px);
+
+
+    border-bottom:1px solid var(--border);
+
+}
+
+
+
+.logo{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+
+
+.logo i{
+
+    color:var(--secondary);
+
+}
+
+
+
+.navbar ul{
+
+    display:flex;
+
+    gap:35px;
+
+    list-style:none;
+
+}
+
+
+
+.navbar a{
+
+    text-decoration:none;
+
+    color:var(--muted);
+
+    font-weight:500;
+
+}
+
+
+
+.navbar a:hover,
+.active{
+
+    color:var(--secondary)!important;
+
+}
+
+
+
+
+
+
+/* =====================
+HERO
+===================== */
+
+
+.hero{
+
+    text-align:center;
+
+    padding:70px 20px 50px;
+
+}
+
+
+
+.hero h1{
+
+    font-size:52px;
+
+    margin-bottom:20px;
+
+
+    background:
+    linear-gradient(
+    90deg,
+    #38BDF8,
+    #2563EB
+    );
+
+
+    -webkit-background-clip:text;
+
+    color:transparent;
+
+}
+
+
+
+.hero p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    color:var(--muted);
+
+    font-size:18px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+
+
+/* =====================
+MAIN CONTAINER
+===================== */
+
+
+.container{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    padding-bottom:60px;
+
+}
+
+
+
+
+
+/* =====================
+MAIN ANALYZER
+===================== */
+
+
+.glass-card{
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    1.1fr .9fr;
+
+
+
+    gap:50px;
+
+
+    padding:45px;
+
+
+    background:#0F172A;
+
+
+    border-radius:24px;
+
+
+    border:1px solid var(--border);
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.35);
+
+
+
+    animation:slide .5s ease;
+
+}
+
+
+
+
+
+@keyframes slide{
+
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:none;
+
+}
+
+
+}
+
+
+
+
+
+/* =====================
+TEXT AREA
+===================== */
+
+
+textarea{
+
+
+width:100%;
+
+
+height:230px;
+
+
+resize:none;
+
+
+padding:20px;
+
+
+border-radius:16px;
+
+
+background:#070D19;
+
+
+border:1px solid var(--border);
+
+
+color:white;
+
+
+font-size:16px;
+
+
+outline:none;
+
+
+}
+
+
+
+textarea:focus{
+
+
+border-color:var(--secondary);
+
+
+}
+
+
+
+
+
+/* =====================
+UPLOAD AREA
+===================== */
+
+.upload-panel{
+display:flex;
+flex-direction:column;
+gap:18px;
+min-width:0;
+}
+
+.upload-panel h2{
+margin-bottom:0;
+}
+
+.upload-grid{
+display:grid;
+grid-template-columns:repeat(4,minmax(0,1fr));
+gap:12px;
+}
+
+.upload-card{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+min-height:96px;
+padding:16px 10px;
+text-align:center;
+cursor:pointer;
+border:1px solid rgba(148,163,184,.18);
+border-radius:16px;
+background:linear-gradient(145deg,rgba(30,41,59,.6),rgba(15,23,42,.34));
+box-shadow:inset 0 1px 0 rgba(255,255,255,.06);
+backdrop-filter:blur(16px);
+transition:transform .25s ease,border-color .25s ease,background .25s ease,box-shadow .25s ease;
+}
+
+.upload-card i{
+font-size:28px;
+color:#38BDF8;
+margin-bottom:10px;
+filter:drop-shadow(0 0 12px rgba(56,189,248,.25));
+}
+
+.upload-card p{
+color:var(--text2);
+font-size:14px;
+font-weight:500;
+line-height:1.2;
+}
+
+.upload-card:hover{
+transform:translateY(-3px);
+border-color:rgba(56,189,248,.75);
+background:linear-gradient(145deg,rgba(37,99,235,.22),rgba(14,165,233,.1));
+box-shadow:0 14px 32px rgba(2,6,23,.35),0 0 22px rgba(14,165,233,.18);
+}
+
+.drop-zone{
+position:relative;
+overflow:hidden;
+text-align:center;
+border:1px dashed rgba(56,189,248,.46);
+border-radius:18px;
+background:linear-gradient(145deg,rgba(15,23,42,.72),rgba(30,41,59,.36));
+box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 45px rgba(2,6,23,.28);
+backdrop-filter:blur(18px);
+transition:border-color .25s ease,background .25s ease,transform .25s ease,box-shadow .25s ease;
+}
+
+.drop-zone:hover{
+transform:translateY(-2px);
+border-color:#38BDF8;
+background:linear-gradient(145deg,rgba(23,37,84,.74),rgba(15,23,42,.56));
+box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 45px rgba(14,165,233,.16);
+}
+
+.drop-zone label{
+display:flex;
+min-height:218px;
+padding:28px;
+cursor:pointer;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+}
+
+.drop-zone i{
+font-size:46px;
+color:#38BDF8;
+margin-bottom:12px;
+filter:drop-shadow(0 0 18px rgba(56,189,248,.3));
+}
+
+.drop-zone h3{
+margin:0 0 6px;
+font-size:22px;
+}
+
+.drop-zone p{
+margin:0;
+color:var(--text2);
+}
+
+#selectedFile{
+display:inline-block;
+max-width:100%;
+margin-top:16px;
+padding:8px 14px;
+overflow-wrap:anywhere;
+border:1px solid rgba(148,163,184,.16);
+border-radius:999px;
+background:rgba(15,23,42,.72);
+color:#CBD5E1;
+font-size:13px;
+}
+
+#analyzeBtn{
+grid-column:1 / -1;
+width:100%;
+padding:16px 20px;
+border:none;
+border-radius:14px;
+background:linear-gradient(90deg,#2563EB,#0EA5E9);
+color:white;
+font-size:17px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 16px 34px rgba(37,99,235,.28);
+transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+
+#analyzeBtn i{
+margin-right:10px;
+}
+
+#analyzeBtn:hover{
+transform:translateY(-3px);
+box-shadow:0 18px 38px rgba(14,165,233,.34);
+filter:saturate(1.08);
+}
+
+#analyzeBtn:active{
+transform:translateY(0) scale(.99);
+}
+
+
+
+
+
+/* =====================
+LOADING
+===================== */
+
+
+.hidden{
+
+display:none;
+
+}
+
+
+
+.loading{
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+align-items:center;
+
+
+padding:40px;
+
+
+}
+
+
+
+.loader{
+
+
+width:65px;
+
+
+height:65px;
+
+
+border-radius:50%;
+
+
+border:6px solid #334155;
+
+
+border-top-color:#38BDF8;
+
+
+animation:spin 1s linear infinite;
+
+
+}
+
+
+
+@keyframes spin{
+
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+
+
+
+
+/* =====================
+RESULT
+===================== */
+
+
+.result{
+
+
+background:#0B1220;
+
+
+border:1px solid var(--border);
+
+
+border-radius:18px;
+
+
+padding:35px;
+
+
+}
+
+
+
+.result h1{
+
+
+font-size:60px;
+
+
+color:var(--secondary);
+
+
+}
+
+
+
+.result p,
+.result li{
+
+
+color:var(--muted);
+
+
+line-height:1.8;
+
+
+}
+
+
+
+.result li{
+
+
+margin:10px;
+
+}
+
+
+
+
+
+
+/* =====================
+RISK BADGE
+===================== */
+
+
+.risk-box{
+
+
+padding:10px 22px;
+
+
+border-radius:30px;
+
+
+display:inline-block;
+
+
+font-weight:700;
+
+
+}
+
+
+
+.high{
+
+background:var(--danger);
+
+}
+
+
+.medium{
+
+background:var(--warning);
+
+}
+
+
+.low{
+
+background:var(--success);
+
+}
+
+
+
+
+
+/* =====================
+EVIDENCE SECTION
+===================== */
+
+
+.evidence-card{
+
+
+margin-top:45px;
+
+
+background:#0F172A;
+
+
+border:1px solid var(--border);
+
+
+border-radius:24px;
+
+
+padding:35px;
+
+
+}
+
+
+
+.evidence-card h2{
+
+
+text-align:center;
+
+
+margin-bottom:30px;
+
+
+}
+
+
+
+.evidence-grid{
+
+
+display:grid;
+
+
+grid-template-columns:repeat(4,1fr);
+
+
+gap:30px;
+
+
+}
+
+
+
+.evidence-grid div{
+
+
+background:var(--card);
+
+
+border-radius:14px;
+
+
+padding:25px;
+
+
+text-align:center;
+
+
+border:1px solid var(--border);
+
+
+}
+
+
+
+.evidence-grid i{
+
+
+font-size:30px;
+
+
+color:var(--secondary);
+
+
+margin-bottom:15px;
+
+
+}
+
+
+
+
+
+/* =====================
+FOOTER
+===================== */
+
+
+footer{
+
+
+text-align:center;
+
+
+padding:35px;
+
+
+margin-top:50px;
+
+
+border-top:1px solid var(--border);
+
+
+color:var(--muted);
+
+
+}
+
+
+
+
+
+/* =====================
+RESPONSIVE
+===================== */
+
+
+@media(max-width:1100px){
+
+
+.glass-card{
+
+grid-template-columns:1fr;
+
+}
+
+
+.upload-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.evidence-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:700px){
+
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+
+.navbar{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+
+.upload-grid{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
+
+.evidence-grid{
+grid-template-columns:1fr;
+}
+
+
+.glass-card{
+    align-items:start;
+}
+
+.left-panel{
+    display:flex;
+    flex-direction:column;
+    height:auto;
+}
+
+#selectedFile{
+    display:block;
+    width:100%;
+    margin-top:15px;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+}
+
+.drop-zone{
+    overflow:hidden;
+}
+
+.drop-zone label{
+    min-height:190px;
+    padding:24px 18px;
+}
+
+#analyzeBtn{
+    font-size:16px;
+    padding:15px;
+}
+
+}
+
+@media(max-width:420px){
+
+.upload-grid{
+    grid-template-columns:1fr;
+}
+
+.upload-card{
+    min-height:82px;
+}
+
+}
+/* =====================
+   FRAUDSHIELD OUTPUT BOX
+===================== */
+
+.result-box{
+
+    margin-top:40px;
+
+    display:none;
+
+    animation:fadeResult .5s ease;
+
+}
+
+
+.result-box h2{
+
+    font-size:28px;
+
+    margin-bottom:25px;
+
+    color:var(--secondary);
+
+}
+
+
+.result-box .prediction{
+
+    font-size:45px;
+
+    font-weight:700;
+
+    margin:15px 0;
+
+}
+
+
+.scam-result{
+
+    border-left:6px solid var(--danger);
+
+}
+
+
+.safe-result{
+
+    border-left:6px solid var(--success);
+
+}
+
+
+.result-item{
+
+    margin:15px 0;
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+
+.result-item strong{
+
+    color:white;
+
+}
+
+
+.reason-list{
+
+    margin-top:15px;
+
+    padding-left:25px;
+
+}
+
+
+.reason-list li{
+
+    margin:10px 0;
+
+    color:var(--muted);
+
+}
+
+
+.recommendation{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#111827;
+
+    border:1px solid var(--border);
+
+    color:#CBD5E1;
+
+}
+
+.button-group {
+  grid-column: span 2;
+  display: flex;
+  gap: 15px;
+}
+
+#analyzeBtn {
+  flex: 2;
+}
+
+.reset-btn {
+  flex: 1;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #f8fafc;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background 0.3s ease;
+}
+
+.reset-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .button-group {
+    grid-column: span 1;
+    flex-direction: column;
+  }
+}
