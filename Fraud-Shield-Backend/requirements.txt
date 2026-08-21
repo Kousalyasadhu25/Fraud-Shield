@@ -22,3 +22,9 @@ matplotlib
 easyocr
 opencv-python-headless
 pdfplumber
+
+
+python-docx
+easyocr
+opencv-python-headless
+Pillow
