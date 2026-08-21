@@ -3,12 +3,24 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import os
 
+# New API imports for lightweight OCR
+import google.generativeai as genai
+from PIL import Image
+
 from src.predict import predict_message
 from src.file_processor import extract_text
-from src.image_processor import extract_text_from_image
+# We completely removed the heavy image_processor import!
 
 app = Flask(__name__)
 CORS(app)
+
+# ==========================
+# Configure Gemini API
+# ==========================
+# This will pull the API key securely from Render's environment variables
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+if GEMINI_API_KEY:
+    genai.configure(api_key=GEMINI_API_KEY)
 
 # ==========================
 # Upload Folder Setup
@@ -87,7 +99,7 @@ def analyze():
             os.remove(filepath)
 
 # ==================================================
-# IMAGE SCREENSHOT ANALYSIS ROUTE
+# IMAGE SCREENSHOT ANALYSIS ROUTE (UPGRADED TO API)
 # ==================================================
 @app.route("/analyze-image", methods=["POST"])
 def analyze_image():
@@ -99,6 +111,9 @@ def analyze_image():
     if file.filename == "":
         return jsonify({"error": "No image selected"}), 400
 
+    if not GEMINI_API_KEY:
+        return jsonify({"error": "Server configuration error: API key missing"}), 500
+
     filename = secure_filename(file.filename)
     filepath = os.path.join(UPLOAD_FOLDER, filename)
 
@@ -106,11 +121,23 @@ def analyze_image():
         file.save(filepath)
         print("SAVED PATH:", filepath)
 
-        # EasyOCR extraction
-        extracted_text = extract_text_from_image(filepath)
+        # -----------------------------------------
+        # NEW: Gemini API Extraction
+        # -----------------------------------------
+        print("SENDING TO GEMINI API FOR OCR...")
+        img = Image.open(filepath)
+        
+        # Using the fast Flash model to extract text perfectly
+        model = genai.GenerativeModel('gemini-1.5-flash')
+        response = model.generate_content([
+            "Extract all the text from this image exactly as it appears. Do not add any extra conversational words, just return the raw text from the image.", 
+            img
+        ])
+        
+        extracted_text = response.text.strip()
         print("OCR TEXT:", extracted_text)
 
-        if not extracted_text or not extracted_text.strip():
+        if not extracted_text:
             return jsonify({"error": "No text detected in image. Please try a clearer screenshot."}), 400
 
         print("STARTING PREDICTION")
@@ -138,6 +165,5 @@ def analyze_image():
 # RUN SERVER
 # ==================================================
 if __name__ == "__main__":
-    import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=False)
