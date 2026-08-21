@@ -1,0 +1,23 @@
+
+# Web Framework & Production Server
+Flask
+Flask-Cors
+Werkzeug
+gunicorn
+
+# Machine Learning & NLP
+pandas
+numpy
+scikit-learn
+nltk
+joblib
+
+# Utilities & Data Processing
+openpyxl
+
+# Visualization (Keep if used in your src/ modules)
+matplotlib
+
+# Image Processing / OCR
+easyocr
+opencv-python-headless
