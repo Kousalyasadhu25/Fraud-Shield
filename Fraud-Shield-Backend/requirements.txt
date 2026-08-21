@@ -1,29 +1,25 @@
-# Force CPU-only PyTorch
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.13.0+cpu
-torchvision==0.28.0+cpu
-
 # Web Framework & Production Server
 Flask
 Flask-Cors
 Werkzeug
 gunicorn
 
-# Machine Learning & NLP
+# API Integration (Lightweight replacement for local OCR/ML)
+google-generativeai
+requests
+
+# Utilities & Data Processing
 pandas
 numpy
 scikit-learn
 nltk
 joblib
-
-# Utilities & Data Processing
 openpyxl
 
 # Visualization
 matplotlib
 
-# Image Processing / OCR
-easyocr
+# Image Processing (Keeping these for basic image handling)
 opencv-python-headless
 pdfplumber
 python-docx
