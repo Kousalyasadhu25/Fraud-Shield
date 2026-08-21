@@ -21,3 +21,4 @@ matplotlib
 # Image Processing / OCR
 easyocr
 opencv-python-headless
+pdfplumber
